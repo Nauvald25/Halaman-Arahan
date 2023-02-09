@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <link rel="manifest" href="manifest.json">
+  <title>Halaman Arahan</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="bookmarks.css">
+
+
+  
+  <script src="https://kit.fontawesome.com/a9bed65047.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.1/css/all.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+  <link rel="icon" href="icon.ico" type="image/x-icon">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+</head>
+
+<body class="light_dark" onload="fetchBookmarks()">
+  <div class="row" id="bookmarks_parent" style="display: none;">
+    <div id="bookmarks" class="light_dark">
+      <form id="myForm" class="col-12">
+        <div class="col-4 form-group">
+          <label for="">Nama</label>
+          <input type="text" class="form-control" id="siteName" placeholder="Masukan Nama Arahan ANda">
+        </div>
+        <div class="col-4 form-group">
+          <label for="">URL</label>
+          <input type="text" class="form-control" id="siteURL" placeholder="Masukan URL Halaman Anda">
+        </div>
+        <button class="btn btn-primary" type="submit">Tambahan Halaman Anda</button>
+      </form>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg light_dark ">
+    <div class="container-fluid">
+      <a href="index.html" class="navbar-brand" id="helpage">Halaman Arahan</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+          <i class="fa fa-bars" style="color:#fff; font-size:30px; margin:auto 0;"></i>
+        </span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <div class="navbar-nav mr-auto">
+
+          <div class="nav-item dropdown" style="display: flex; height: 44.5px">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">Arahan</a>
+            <div class="dropdown-menu bookmarks light_dark" aria-labelledby="navbarDropdownMenuLink"
+              id="bookmarksOutput"></div>
+            <button class="btn light_dark" id="bookmarks_toggler">&plus; Tambahan</button>
+
+          </div>
+
+
+
+          <div class="nav-item">
+            <a href="https://github.com/Nauvald25?tab=repositories" class="nav-link"><i class="fa fa-github"></i></a>
+          </div>
+
+   
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+
+              <i class="fa fa-cogs"></i>
+            </a>
+
+            <div class="dropdown-menu settings light_dark" aria-labelledby="navbarDropdownMenuLink">
+              <div class="grid">
+                <div class="grid-item">Nama</div>
+                <a id="name_change" class="grid-item"><i class="fas fa-pen"></i></a>
+                <div class="grid-item">Buka Halaman Baru</div>
+                <input class="grid-item" type="checkbox" name="" id="newTab">
+              </div>
+
+            </div>
+          </div>
+
+
+          <div id="dark-mode-toggle">
+            <div type="button" id="dark-mode-toggle-button" data-toggle="button" aria-pressed="false"
+              autocomplete="off">🌙</div>
+          </div>
+
+        </div>
+      </div>
+  </nav>
+
+ 
+  <div class="row">
+    <div id="salutation" class="col-12 light_dark">
+      Selamat Datang <span id="user_name">Nama</span>
+    </div>
+  </div>
+
+
+  <nav class="navbar">
+    <div class="container-fluid">
+      <form class="d-flex search" action="https://www.google.com/search">
+        <input class="form-control me-2 searchBar light_dark_neo" type="search" autofocus="autofocus"
+          placeholder="Powered by Google..." aria-label="Search" name=q id=q>
+        <button class="btn btn-outline btn-dark searchButton light_dark_neo" type="submit">🔎</button>
+      </form>
+    </div>
+  </nav>
+
+
+
+  <div class="container">
+    <div class="row bootstrapRow">
+
+
+
+      <div class="col-sm-4 col-4 col-lg-2 col-md-3">
+        <div class="icons light_dark_neo">
+          <a href="https://calendar.google.com/calendar/u/0/r/week" target="_blank">
+            <img src="calendar.svg" alt="calendar" height="100px">
+          </a>
+          <span class="hover_txt">Calender</span>
+        </div>
+      </div>
+    <tr></tr>
+
+
+      <div class="col-sm-4 col-4 col-lg-2 col-md-3">
+        <div class="icons light_dark_neo">
+          <a href="https://classroom.google.com/u/1/h" target="_blank">
+            <img src="google-classroom.svg" alt="GoogleClassroom" height="100px">
+          </a>
+          <span class="hover_txt">Classroom</span>
+        </div>
+      </div>
+    <tr></tr>
+
+
+
+      <div class="col-sm-4 col-4 col-lg-2 col-md-3">
+        <div class="icons light_dark_neo ">
+          <a href="https://www.linkedin.com/feed/" target="_blank">
+            <img src="linkedin.svg" alt="linkedin" height="100px">
+          </a>
+          <span class="hover_txt">LinkedIn</span>
+        </div>
+      </div>
+    <tr></tr>
+
+
+
+
+      <div class="col-sm-4 col-4 col-lg-2 col-md-3">
+        <div class="icons light_dark_neo ">
+          <a href="https://www.youtube.com/" target="_blank">
+            <img src="youtube.svg" alt="youtube" height="100px">
+          </a>
+          <span class="hover_txt">Youtube</span>
+        </div>
+      </div>
+    <tr></tr>
+
+
+      <div class="col-sm-4 col-4 col-lg-2 col-md-3">
+        <div class="icons light_dark_neo">
+          <a href="https://drive.google.com/drive/my-drive" target="_blank">
+            <img src="drive.svg" alt="drive" height="100px">
+          </a>
+          <span class="hover_txt">Drive</span>
+        </div>
+      </div>
+    <tr></tr>
+
+
+
+      <div class="col-sm-4 col-4 col-lg-2 col-md-3">
+        <div class="icons light_dark_neo">
+          <a href="https://www.facebook.com/" target="_blank">
+            <img src="facebook-svgrepo-com.svg" alt="facebook" height="100">
+          </a>
+          <span class="hover_txt">Facebbok</span>
+        </div>
+      </div>
+    <tr></tr>
+
+
+
+      <div class="col-sm-4 col-4 col-lg-2 col-md-3">
+        <div class="icons light_dark_neo">
+          <a href="https://www.instagram.com/" target="_blank">
+            <img src="instagram.svg" alt="instagram" height="100px">
+          </a>
+          <span class="hover_txt">Instagram</span>
+        </div>
+      </div>
+    <tr></tr>
+
+  
+
+      <div class="col-sm-4 col-4 col-lg-2 col-md-3">
+        <div class="icons light_dark_neo">
+          <a href="https://shopee.co.id/" target="_blank">
+            <img src="shopee__iconlogovector.com-004.svg" alt="shopee" height="100px">
+          </a>
+          <span class="hover_txt">Shopee</span>
+        </div>
+      </div>
+    <tr></tr>
+
+  
+
+      <div class="col-sm-4 col-4 col-lg-2 col-md-3">
+        <div class="icons light_dark_neo">
+          <a href="https://www.tiktok.com/" target="_blank">
+            <img src="tiktok-svgrepo-com.svg" alt="tiktok" height="100">
+          </a>
+          <span class="hover_txt">Tiktok</span>
+        </div>
+      </div>
+    <tr></tr>
+
+
+
+      <div class="col-sm-4 col-4 col-lg-2 col-md-3">
+        <div class="icons light_dark_neo">
+          <a href="https://www.whatsapp.com/" target="_blank">
+            <img src="whatsapp-icon-logo-svgrepo-com.svg" alt="whatsapp" height="100">
+          </a>
+          <span class="hover_txt">Whatsapp</span>
+        </div>
+      </div>
+      <tr></tr>
+
+      <div class="col-sm-4 col-4 col-lg-2 col-md-3">
+        <div class="icons light_dark_neo">
+          <a href="https://www.dana.id/" target="_blank">
+            <img src="dana.svg" alt="dana" height="100">
+          </a>
+          <span class="hover_txt">Dana</span>
+        </div>
+      </div>
+      <tr></tr>
+
+
+
+      <div class="col-sm-4 col-4 col-lg-2 col-md-3">
+        <div class="icons light_dark_neo">
+          <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">
+            <img src="gmail.svg" alt="gmailpersonal" height="100px">
+          </a>
+          <span class="hover_txt">Gmail</span>
+        </div>
+      </div>
+    <tr></tr>
+
+    
+<!-- 
+      <div class="col-sm-4 col-4 col-lg-2 col-md-3">
+        <div class="icons light_dark_neo">
+          <a href="https://www.gojek.com/id-id/" target="_blank">
+            <img src="" alt="gojek" height="80px">
+          </a>
+          <span class="hover_txt">Gojek</span>
+        </div>
+      </div>
+
+   
+
+      <div class="col-sm-4 col-4 col-lg-2 col-md-3">
+        <div class="icons light_dark_neo">
+          <a href="https://www.grab.com/id/" target="_blank">
+            <img src="" alt="grab" height="100">
+          </a>
+          <span class="hover_txt">Grab</span>
+        </div>
+      </div>
+
+
+      <div class="col-sm-4 col-4 col-lg-2 col-md-3">
+        <div class="icons light_dark_neo">
+          <a href="https://www.lazada.co.id/" target="_blank">
+            <img src="" alt="lazada" height="100">
+          </a>
+          <span class="hover_txt">Lazada</span>
+        </div>
+      </div> 
+
+
+      <div class="col-sm-4 col-4 col-lg-2 col-md-3">
+        <div class="icons light_dark_neo">
+          <a href="" target="_blank">
+            <img src="" alt="" height="100px">
+          </a>
+          <span class="hover_txt">#</span>
+        </div>
+      </div>
+
+
+
+      <div class="col-sm-4 col-4 col-lg-2 col-md-3">
+        <div class="icons light_dark_neo">
+          <a href="" target="_blank">
+            <img src="" alt="" height="100px">
+          </a>
+          <span class="hover_txt">#</span>
+        </div>
+      </div> 
+
+
+      <div class="col-sm-4 col-4 col-lg-2 col-md-3">
+        <div class="icons light_dark_neo">
+          <a href="" target="_blank">
+            <img src="" alt="youtube" height="100px">
+          </a>
+          <span class="hover_txt">#</span>
+        </div>
+      </div>
+
+
+      <div class="col-sm-4 col-4 col-lg-2 col-md-3">
+        <div class="icons light_dark_neo">
+          <a href="#" target="_blank">
+            <img src="" alt="" height="100px">
+          </a>
+          <span class="hover_txt">#</span>
+        </div>
+      </div>  -->
+
+    </div>
+  </div>
+  <div class="footer">
+    © 2023 | Halam Arahan | Mnauvald25
+  </div>
+  <!-- <script>
+    // for dark mode toggle
+    
+  </script> -->
+  <script src="index.js"></script>
+  <script src="bookmarks.js"></script>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+</body>
